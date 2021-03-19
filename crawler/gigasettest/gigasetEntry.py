@@ -24,6 +24,7 @@ class MainPage:
         time.sleep(2)
         self.headoperate = HeadOperation(self.broswer) # head object
         self.navoperate = NaviOperation(self.broswer)
+        print('-------------')
         return
 
 # find elements in root-shadow pop up (shadow dom)
