@@ -3,13 +3,12 @@
 # Gigaset Webseite eintreten, Fenster vergrößern
 # Datenschutz akzeptieren
 # Elemente in Navigation manupulieren: searchbar Zubehör suchen, Seite nach unten&oben ziehen, Sprache wechseln, Produkt
-# herausfiden
+# herausfinden
+# comments added
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 import time
-from selenium.webdriver import ActionChains
 from crawler.gigasettest.navigation import NaviOperation
 from crawler.gigasettest.head import HeadOperation
 
