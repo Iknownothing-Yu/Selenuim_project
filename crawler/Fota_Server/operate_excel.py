@@ -14,7 +14,7 @@ class Local_oprator():
         file = zipfile.ZipFile(self.download_path + self.active_data_name + '.zip')
         file.extractall(self.decompress_folder)
 
-        print('!!!!!!!!!!!!', self.active_data_name + 'unzip finished!!!!')
+        print('//// unzip ', self.active_data_name + ' finished!!!!')
 
     # create a depress folder in the same path with zip files: c:/download/
     def create_depress_folder(self):

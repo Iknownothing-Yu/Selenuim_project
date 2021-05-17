@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 import time
-from crawler.Fota_Server.download_IMEI import DownloadTable
+from Selenuim_project.crawler.Fota_Server.download_IMEI import DownloadTable
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -29,19 +29,7 @@ class LoginPage():
         self.wait.until(EC.presence_of_element_located(
             (By.ID, 'confirm-exit')))
         self.alert = self.driver.find_element_by_id('confirm-exit')
-        '''
-        while self.alert.get_attribute('style') != 'display: none':
-        self.driver.implicitly_wait(10)
-        self.close_alert = self.driver.find_element_by_id('confirm-exit-reset')
-        self.driver.execute_script('arguments[0].click()', self.close_alert)
-        #self.close_alert.click()
 
-        time.sleep(5)
-        self.username.send_keys(self.un)
-        self.passowrd.send_keys(self.pw)
-        time.sleep(10)
-        self.submit.click()
-        '''
         return
 
 if __name__ == '__main__':
