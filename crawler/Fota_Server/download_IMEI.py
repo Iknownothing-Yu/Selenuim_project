@@ -32,7 +32,7 @@ class DownloadTable():
         self.projects_table = self.driver.find_element_by_xpath('//div[@id = "result"]/table/tbody')
         self.project_list = self.projects_item = self.projects_table.find_elements_by_tag_name('tr')
         #self.total_project = len(self.project_list)
-        for i in range(4):
+        for i in range(3):
             self.projects_item = self.project_list[i].find_elements_by_tag_name('td')[-1]
             # self.projects_item = self.projects_table.find_elements_by_tag_name('tr')[0].find_elements_by_tag_name('td')[-1]
             self.projects_item.find_element_by_tag_name('a').click()
@@ -52,7 +52,7 @@ class DownloadTable():
             print('------end download-------------')
             self.op_excel = OpExcel(self.file_name)
             # if no such file then create new one
-            self.op_excel.create_depress_folder()
+            self.op_excel.operate_local_data()
 
 
     #get the state of begining download: "color" of font. the font color changes to blue when download begining

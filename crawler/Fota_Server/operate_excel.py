@@ -9,26 +9,33 @@ class Local_oprator():
         # target folder
         self.decompress_folder = self.download_path + 'active_data'
 
-    def decompress_zip(self):
+    def unzip(self):
         # unzip active data in target folder
         file = zipfile.ZipFile(self.download_path + self.active_data_name + '.zip')
         file.extractall(self.decompress_folder)
 
         print('//// unzip ', self.active_data_name + ' finished!!!!')
 
+        self.csv_to_excel()
+
+    def create_unzip_folder(self):
+        os.mkdir(self.decompress_folder)
+        print('decompress folder created')
+
+    def csv_to_excel(self):
+        csv_file = pd.read_csv(self.decompress_folder + '/%s.csv' %self.active_data_name)
+        csv_file.to_excel('C:/Users/yuhan/Downloads/active_data/%s.xlsx' %self.active_data_name, sheet_name='data')
+
     # create a depress folder in the same path with zip files: c:/download/
-    def create_depress_folder(self):
+    def operate_local_data(self):
         #if target folder not exists, create it
         if not os.path.exists(self.decompress_folder):
-            os.mkdir(self.decompress_folder)
-            print('decompress folder created')
+            self.create_unzip_folder()
 
         #unzip active data in target folder
-        self.decompress_zip()
+        self.unzip()
 
-    def oprate_csv(self):
-        csv_file = pd.read_csv('C:/Users/yuhan/Downloads/active_data/' + self.active_data_name + '.csv')
-        csv_file.to_excel('C:/Users/yuhan/Downloads/active_data/1.xlsx', sheet_name='data')
+
 
 
 
